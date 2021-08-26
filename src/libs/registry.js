@@ -122,7 +122,7 @@ class Registry {
     }
     this.add(field, component)
     const hasVModelValue = has(component.$options.propsData, 'formulateValue')
-    const hasValue = has(component.$options.propsData, 'value')
+    const hasValue = has(component.$options.propsData, 'value') || has(component.$options.propsData, 'checked')
     // This is not reactive
     const debounceDelay = this.ctx.debounce || this.ctx.debounceDelay || (this.ctx.context && this.ctx.context.debounceDelay)
     if (debounceDelay && !has(component.$options.propsData, 'debounce')) {
