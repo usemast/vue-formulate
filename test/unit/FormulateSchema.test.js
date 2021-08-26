@@ -3,6 +3,7 @@ import flushPromises from 'flush-promises'
 import { mount } from '@vue/test-utils'
 import Formulate from '@/Formulate.js'
 import FormulateSchema from '@/FormulateSchema.js'
+import FormulateForm from '@/FormulateForm.vue'
 import FormulateInput from '@/FormulateInput.vue'
 
 Vue.use(Formulate)
@@ -214,4 +215,41 @@ describe('FormulateSchema', () => {
     expect(customBlurHandler.mock.calls[0][0]).toBeInstanceOf(FocusEvent)
     expect(changedState.mock.calls.length).toBe(1)
   })
+
+  it('can submit initial value from checkbox', async () => {
+
+    const submit = jest.fn();
+
+    const wrapper = mount({
+      template: `
+        <FormulateForm
+          :schema="schema"
+          @submit="submit"
+        />
+      `,
+      data () {
+        return {
+        }
+      },
+      computed: {
+        schema () {
+          return [
+            { type: 'checkbox', name: 'testCheckbox', label: 'Test Checkbox', checked: true },
+            { type: 'submit' }
+          ]
+        }
+      },
+      methods: {
+        submit
+      }
+    })
+
+
+    const form = wrapper.findComponent(FormulateForm)
+    await form.vm.formSubmitted()
+    await flushPromises()
+    expect(submit).toHaveBeenCalledWith({
+      testCheckbox: true
+    })
+  });
 })
