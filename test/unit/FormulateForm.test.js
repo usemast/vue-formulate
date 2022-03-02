@@ -582,6 +582,10 @@ describe('FormulateForm', () => {
     const errorObject = errorObjects[2][0]
     expect(errorObject).toEqual({
       name: 'testinput',
+      attributes: {
+        id: "formulate-global-48",
+        name: "testinput",
+      },
       errors: [
         expect.any(String)
       ],
@@ -605,6 +609,10 @@ describe('FormulateForm', () => {
     const errorObject = errorObjects[2][0]
     expect(errorObject).toEqual({
       name: 'testinput',
+      attributes: {
+        id: "formulate-global-50",
+        name: "testinput",
+      },
       errors: [],
       hasErrors: false
     })

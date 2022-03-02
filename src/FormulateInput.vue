@@ -582,6 +582,7 @@ export default {
     getErrorObject () {
       return {
         name: this.context.nameOrFallback || this.context.name,
+        attributes: this.context.attributes, // Expose attributes so that we can use the id to distinguish different inputs with the same field name
         errors: this.validationErrors.filter(s => typeof s === 'string'),
         hasErrors: !!this.validationErrors.length
       }

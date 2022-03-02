@@ -1,6 +1,6 @@
 {
   "name": "@braid/vue-formulate",
-  "version": "2.5.3",
+  "version": "2.5.3-mast-fork",
   "description": "The easiest way to build forms in Vue.",
   "main": "dist/formulate.umd.js",
   "module": "dist/formulate.esm.js",
@@ -27,7 +27,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+ssh://git@github.com/wearebraid/vue-formulate.git"
+    "url": "git+ssh://git@github.com/usemast/vue-formulate.git"
   },
   "keywords": [
     "vue",

@@ -217,6 +217,10 @@ describe('FormulateInput', () => {
     const errorObject = wrapper.emitted('validation')[0][0]
     expect(errorObject).toEqual({
       name: 'testinput',
+      attributes: {
+        id: "formulate-global-16",
+        name: "testinput",
+      },
       errors: [
         expect.any(String)
       ],

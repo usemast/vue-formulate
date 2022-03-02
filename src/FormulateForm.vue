@@ -197,6 +197,7 @@ export default {
     }
   },
   created () {
+    console.log('Using the Mast fork of vue-formulate')
     this.$formulate.register(this)
     this.applyInitialValues()
     this.$emit('created', this)
