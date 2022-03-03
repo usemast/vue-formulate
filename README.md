@@ -1,3 +1,20 @@
+# Mast-specific README:
+
+We forked the repo because we wanted to expose a specific internal one time, and couldn't find a better way (we preferred forking over copy-pasting hundreds of lines into our codebase and monkey-patching it).
+
+It is tempting to continue to modify this fork further. We should remain cautious of allowing this fork to drift far from the original - the further it goes the more complexity we have to hold in our heads, and the harder it will be to rebase it on the original, and the less we can trust it to be bug-free.
+
+If we update this again in the future, we should first rebase our fork on the latest stable version.
+
+## Tips for updating the fork
+
+If you update this fork you'll need to remember two things to make sure your project is actually using it:
+
+- Run `npm run build` in this repo and include the resulting builds in your update.
+- Update the commit sha in the other project's package.json to point to the one you want to use (if you are using the commit-sha way of specifying the version).
+
+# Original README:
+
 <p align="center"><a href="https://vueformulate.com" target="_blank" rel="noopener noreferrer"><img width="100" src="https://assets.wearebraid.com/vue-formulate/logo.png" alt="VueFormulate"></a></p>
 
 <p align="center">
